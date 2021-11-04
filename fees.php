@@ -15,7 +15,7 @@
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap-theme.min.css">
 
 <!-- Latest compiled and minified JavaScript-->
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script> 
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
 
 
 <!-- jQuery library -->
@@ -26,11 +26,11 @@
 
 
 <!--    -->
-     
-     
-     
-	
-	
+
+
+
+
+
 <!--	<link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Karla%7CMontserrat">	  -->
 
 <!--
@@ -135,7 +135,7 @@ function calculate_fee()
 		document.getElementById("new-fee").innerText=creditFees;
 		var aa=creditFees-fixedFee;
 		document.getElementById("breakdown").innerText="\nFixed Fees (Semester Fee + Lab Fee): "+fixedFee+"\nCredit Fees: "+aa;
-		
+
 		var waiveredCreditFee=oldFees-fixedFee;
 		unwaiveredCred=waiveredCreditFee/(100-currWaiver)*100;
 		newCred=unwaiveredCred*(100-newWaiver)/100;
@@ -167,18 +167,18 @@ function calculate_fee2()
 	var failCred=document.getElementById("failCredits").value;
 	var waiver=document.getElementById("waiver").value;
 	var regularCred=cred-failCred;
-	
+
 	var newFees=0;
 	var creditFees=0;
 	var fixedFee=3600;
 	var perCredit=1650;
 
-		if(reg<170000000000)
+		if(reg>120000000000&&reg<170000000000)
 		{
 			fixedFee=2100;
 			perCredit=1500
 		}
-		
+
 		creditFees=cred*perCredit;
 		waiveredFees=regularCred*perCredit*waiver/100;
 		console.log(fixedFee);
@@ -186,7 +186,7 @@ function calculate_fee2()
 		console.log(newFees);
 		document.getElementById("new-fee2").innerText=newFees;
 		document.getElementById("breakdown2").innerText="\nFixed Fees (Semester Fee + Lab Fee): "+fixedFee+"\nCredit Fees ("+cred+" * "+perCredit+"): "+creditFees+"\nWaivered Fee: "+waiveredFees+"\nTotal="+fixedFee+" \+ "+creditFees+" - "+waiveredFees+" = "+newFees;
-	
+
 }
 
 /* old COde
@@ -195,7 +195,7 @@ function calculate_fee2()
 	var reg=document.getElementById("reg2").value;
 	var cred=document.getElementById("credits").value;
 	var waiver=document.getElementById("waiver").value;
-	
+
 	var newFees=0;
 	var creditFees=0;
 	var fixedFee=3600;
@@ -206,14 +206,14 @@ function calculate_fee2()
 			fixedFee=2100;
 			perCredit=1500
 		}
-		
+
 		creditFees=cred*perCredit*(100-waiver)/100;
 		console.log(fixedFee);
 		newFees=fixedFee+creditFees;
 		console.log(newFees);
 		document.getElementById("new-fee2").innerText=newFees;
 		document.getElementById("breakdown2").innerText="\nFixed Fees (Semester Fee + Lab Fee): "+fixedFee+"\nCredit Fees ("+cred+" * "+perCredit+"): "+creditFees;
-	
+
 }
 */
 </script>
